@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    .flip {
+      position: relative;
+      width: 60px;
+      height: 100px;
+      line-height: 100px;
+      border: solid 1px #000000;
+      border-radius: 10px;
+      box-shadow: 0 0 0 2px rgba(0, 0, 0, .2);
+    }
+
+    .flip .digital::before,
+    .flip .digital::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      overflow: hidden;
+    }
+
+    /* 上半页 */
+    .flip .digital::before {
+      top: 0;
+      bottom: 50%;
+      border-radius: 10px 10px 0 0;
+      box-sizing: border-box;
+      border-bottom: solid 1px #666666;
+    }
+
+    /* 下半页 */
+    .flip .digital::after {
+      top: 50%;
+      bottom: 0;
+      border-radius: 0 0 10px 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="flip down ">
+    <div class="digital front number0"></div>
+    <div class="digital back number1"></div>
+  </div>
+</body>
+
+</html>
